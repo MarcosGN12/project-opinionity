@@ -1,0 +1,22 @@
+services:
+  todoList-dev-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: opininonity-dev
+    volumes:
+      - dev_db_data:/var/lib/postgresql/data
+    ports:
+      - "5440:5433"
+  todoList-pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5054:80"
+volumes:
+  dev_db_data:

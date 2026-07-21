@@ -1,0 +1,61 @@
+# =================( DEPENDENCIAS )=================
+node_modules/
+/node_modules
+**/node_modules/
+.pnp
+.pnp.js
+
+# =================( COMPILADOS Y BUILD )=================
+/dist/
+**/dist/
+/build/
+**/build/
+.angular/
+**/ .angular/
+
+# =================( LOGS Y ERRORES )=================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# =================( SISTEMA OPERATIVO )=================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# =================( TESTS Y COVERAGE )=================
+/coverage/
+**/coverage/
+/.nyc_output/
+
+# =================( IDEs Y EDITORES )=================
+/.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# =================( VARIABLES DE ENTORNO )=================
+.env
+.env.*.local
+.env.local
+
+# =================( ARCHIVOS TEMPORALES )=================
+.temp/
+.tmp/
+pids/
+*.pid
+*.seed
+*.pid.lock
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
