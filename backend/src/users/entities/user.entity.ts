@@ -1,10 +1,12 @@
 import {
   Column,
   CreateDateColumn,
+  Entity,
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm';
 
+@Entity()
 @Unique(['id'])
 export class User {
   @PrimaryGeneratedColumn()
