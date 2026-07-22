@@ -11,9 +11,18 @@ export class PostsService {
     @InjectRepository(Post) private postRepository: Repository<Post>,
   ) {}
 
-  async create(createPostDto: CreatePostDto): Promise<Post> {
-    const post = this.postRepository.create(createPostDto);
-    return await this.postRepository.save(post);
+  async create(createPostDto: CreatePostDto, userId: number): Promise<Post> {
+    const newPost = this.postRepository.create({
+      ...createPostDto,
+      user: { id: userId },
+      postsStats: {
+        likes: 0,
+        visits: 0,
+        comments: 0,
+      },
+    });
+
+    return await this.postRepository.save(newPost);
   }
 
   async findAll(): Promise<Post[]> {
@@ -35,7 +44,17 @@ export class PostsService {
   }
 
   async remove(id: string): Promise<Post> {
-    const post = await this.findOne(id);
+    const post = await this.postRepository.findOne({
+      where: { id },
+      relations: {
+        postsStats: true,
+      },
+    });
+
+    if (!post) {
+      throw new NotFoundException(`Post with ID ${id} not found`);
+    }
+
     return await this.postRepository.remove(post);
   }
 }

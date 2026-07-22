@@ -12,6 +12,9 @@ export class Profile {
   followers: number;
 
   @Column({ default: 0 })
+  following: number;
+
+  @Column({ default: 0 })
   likes: number;
 
   @Column({ default: 0 })
