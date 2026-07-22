@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
+import { ProfilesModule } from './profiles/profiles.module';
+import { PostsModule } from './posts/posts.module';
+import { PostsStatsModule } from './posts-stats/posts-stats.module';
 
 @Module({
   imports: [
@@ -28,6 +31,9 @@ import { User } from './users/entities/user.entity';
       }),
     }),
     UsersModule,
+    ProfilesModule,
+    PostsModule,
+    PostsStatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

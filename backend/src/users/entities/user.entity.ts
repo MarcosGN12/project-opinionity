@@ -2,20 +2,21 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  OneToOne,
   PrimaryGeneratedColumn,
-  Unique,
 } from 'typeorm';
+import { Profile } from '../../profiles/entities/profiles.entity';
 
-@Entity()
-@Unique(['id'])
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
-  @Column()
+  @Column({ unique: true })
   username: string;
 
   @Column()
@@ -24,9 +25,13 @@ export class User {
   @Column()
   password: string;
 
-  @Column()
+  @Column({ type: 'date' })
   birthDate: Date;
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @OneToOne(() => Profile, { cascade: true, onDelete: 'CASCADE' })
+  @JoinColumn()
+  profile: Profile;
 }
