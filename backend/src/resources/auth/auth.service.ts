@@ -10,7 +10,10 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async signIn(email: string, pass: string): Promise<{ access_token: string }> {
+  async signIn(
+    email: string,
+    pass: string,
+  ): Promise<{ access_token: string; userId: number }> {
     const user = await this.usersService.findOneLoging(email);
 
     if (!user) {
@@ -26,6 +29,7 @@ export class AuthService {
     const payload = { sub: user.id, email: user.email };
     return {
       access_token: await this.jwtService.signAsync(payload),
+      userId: user.id,
     };
   }
 }

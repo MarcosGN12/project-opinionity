@@ -15,8 +15,8 @@ export class AuthService {
   login(item: LoginData) {
     this.http.post('http://localhost:3000/auth/login', item).subscribe({
       next: (response: any) => {
-        if (response.accessToken) {
-          localStorage.setItem('access_token', response.accessToken);
+        if (response.access_token) {
+          localStorage.setItem('access_token', response.access_token);
           localStorage.setItem('userId', response.userId);
         } else {
           alert(response.message);
