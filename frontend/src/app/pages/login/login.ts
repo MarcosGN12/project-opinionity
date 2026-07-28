@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoginComponentForm } from './components/login-component-form';
 import { Router } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
-import { AuthService } from '../../services/auth-service';
+import { AuthService } from '../../services/auth.service';
 
 export interface LoginData {
   email: string;
