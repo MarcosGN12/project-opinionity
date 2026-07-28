@@ -4,38 +4,30 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  JoinColumn,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Profile } from '../../profiles/entities/profiles.entity';
+import { Profile } from '../../profiles/entities/profile.entity';
 import * as bcrypt from 'bcrypt';
 
 @Entity('users')
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @Column({ unique: true })
   email: string;
 
-  @Column({ unique: true })
-  username: string;
-
-  @Column()
-  gender: string;
-
-  @Column()
+  @Column({ select: false })
   password: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: true })
   birthDate: Date;
 
   @CreateDateColumn()
   createdAt: Date;
 
-  @OneToOne(() => Profile, { cascade: true, onDelete: 'CASCADE' })
-  @JoinColumn()
+  @OneToOne(() => Profile, (profile) => profile.user, { cascade: true })
   profile: Profile;
 
   @BeforeInsert()

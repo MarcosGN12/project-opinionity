@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './resources/users/users.module';
 import { User } from './resources/users/entities/user.entity';
-import { Profile } from './resources/profiles/entities/profiles.entity';
+import { Profile } from './resources/profiles/entities/profile.entity';
 import { Post } from './resources/posts/entities/post.entity';
 import { PostsStats } from './resources/posts-stats/entities/post-stats.entity';
 import { ProfilesModule } from './resources/profiles/profiles.module';
