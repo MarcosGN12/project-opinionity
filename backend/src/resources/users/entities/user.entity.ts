@@ -9,6 +9,7 @@ import {
 } from 'typeorm';
 import { Profile } from '../../profiles/entities/profile.entity';
 import * as bcrypt from 'bcrypt';
+import { Exclude } from 'class-transformer';
 
 @Entity('users')
 export class User {
@@ -18,7 +19,8 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-  @Column({ select: false })
+  @Column()
+  @Exclude()
   password: string;
 
   @Column({ type: 'date', nullable: true })

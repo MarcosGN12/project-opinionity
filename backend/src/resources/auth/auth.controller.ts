@@ -12,6 +12,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { Public } from './decorators/public.decorator';
 import type { RequestWithUser } from './interfaces/requestWithUser';
+import { CreateUserDto } from '../users/dto/create-user.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -25,6 +26,12 @@ export class AuthController {
       signInDto.email as string,
       signInDto.password as string,
     );
+  }
+
+  @Post('register')
+  @Public()
+  signUp(@Body() createUserDto: CreateUserDto) {
+    return this.authService.signUp(createUserDto);
   }
 
   @UseGuards(AuthGuard)

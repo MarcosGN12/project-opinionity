@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { RegisterData } from '../pages/register/register';
+import { Router } from '@angular/router';
 
 export interface LoginData {
   email: string;
@@ -11,21 +13,13 @@ export interface LoginData {
 })
 export class AuthService {
   http = inject(HttpClient);
+  router = inject(Router);
 
   login(item: LoginData) {
-    this.http.post('http://localhost:3000/auth/login', item).subscribe({
-      next: (response: any) => {
-        if (response.access_token) {
-          localStorage.setItem('access_token', response.access_token);
-          localStorage.setItem('userId', response.userId);
-        } else {
-          alert(response.message);
-          console.log(response.result);
-        }
-      },
-      error: (error) => {
-        alert(error.statusText);
-      },
-    });
+    return this.http.post<any>('http://localhost:3000/auth/login', item);
+  }
+
+  register(item: RegisterData) {
+    return this.http.post('http://localhost:3000/auth/register', item);
   }
 }

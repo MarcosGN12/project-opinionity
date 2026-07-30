@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcos (@marcosdev) | Opinionity</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-['Inter',sans-serif] antialiased min-h-screen selection:bg-blue-500/20 transition-colors duration-300"
+  >
+    <header
+      class="sticky top-0 z-40 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 h-16">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-blue-600 dark:text-blue-500 text-3xl"
+            >bubble_chart</span
+          >
+          <span class="font-extrabold text-xl text-blue-600 dark:text-blue-500 tracking-tight"
+            >Opinionity</span
+          >
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button
+            onclick="document.documentElement.classList.toggle('dark')"
+            class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Toggle Dark Mode"
+          >
+            <span class="material-symbols-outlined text-xl">dark_mode</span>
+          </button>
+          <div class="flex items-center gap-3 border-l border-slate-200 dark:border-slate-800 pl-4">
+            <img
+              class="w-9 h-9 rounded-full object-cover ring-2 ring-blue-500/30"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbN5gnpFnD9FV_7tqAFgeSKAUTiAiDT9dEEcoUgTZ1QESGVmiQ2dIOHzgqOMLt9KrHjSxdk3HmJuZA5aRHaHZB6fDwfnQ-WOILHz7NsZ0Ob8yjT0zN6Q91K_48C4OZ5xdy9FM2gZQUazGU59bpKO0TqCvozONhj2McUTXOoO1oHt6wzHN4Fu4BoEzKR3yD8zAo9Gf1LOdF5Ye3JJZEX_20XwmpRhywOS41py4yPTztkXVpW4li36fKs1bxlgYqXG8JbJ_f0m9yix8"
+              alt="Marcos"
+            />
+            <span class="hidden sm:inline text-sm font-semibold text-slate-800 dark:text-slate-200"
+              >Marcos</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-0 sm:px-4 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <aside
+          class="hidden lg:block lg:col-span-3 sticky top-16 h-[calc(100vh-4rem)] py-6 space-y-4"
+        >
+          <div
+            class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-200/80 dark:border-slate-700/50 space-y-1"
+          >
+            <a
+              href="/"
+              class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 font-medium rounded-xl transition-all"
+            >
+              <span class="material-symbols-outlined">home</span>
+              <span>Home</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 font-medium rounded-xl transition-all"
+            >
+              <span class="material-symbols-outlined">search</span>
+              <span>Explore</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 font-medium rounded-xl transition-all relative"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+              <span>Notifications</span>
+              <span class="w-2 h-2 bg-red-500 rounded-full ml-auto"></span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 px-4 py-3 text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 font-semibold rounded-xl transition-all"
+            >
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1"
+                >person</span
+              >
+              <span>Profile</span>
+            </a>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl p-5 shadow-sm space-y-3 relative overflow-hidden"
+          >
+            <div class="absolute -right-4 -bottom-4 opacity-10">
+              <span class="material-symbols-outlined text-9xl">auto_awesome</span>
+            </div>
+            <h3 class="font-bold text-lg leading-snug">Opinionity PRO</h3>
+            <p class="text-xs text-blue-100 leading-relaxed">
+              Get the verified badge and unlock custom profile themes.
+            </p>
+            <button
+              class="bg-white text-blue-600 hover:bg-blue-50 text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-sm"
+            >
+              Upgrade Now
+            </button>
+          </div>
+        </aside>
+
+        <main class="col-span-1 lg:col-span-6 py-4 lg:py-6 space-y-6 px-3 sm:px-0 pb-24 lg:pb-6">
+          <section
+            class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 dark:border-slate-700/50"
+          >
+            <div
+              class="h-44 sm:h-52 w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 relative"
+            >
+              <div class="absolute inset-0 bg-black/10"></div>
+            </div>
+
+            <div class="px-5 sm:px-6 pb-6 relative">
+              <div class="flex justify-between items-end -mt-16 mb-4">
+                <div class="relative">
+                  <img
+                    class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-md bg-slate-100 dark:bg-slate-700"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbN5gnpFnD9FV_7tqAFgeSKAUTiAiDT9dEEcoUgTZ1QESGVmiQ2dIOHzgqOMLt9KrHjSxdk3HmJuZA5aRHaHZB6fDwfnQ-WOILHz7NsZ0Ob8yjT0zN6Q91K_48C4OZ5xdy9FM2gZQUazGU59bpKO0TqCvozONhj2McUTXOoO1oHt6wzHN4Fu4BoEzKR3yD8zAo9Gf1LOdF5Ye3JJZEX_20XwmpRhywOS41py4yPTztkXVpW4li36fKs1bxlgYqXG8JbJ_f0m9yix8"
+                    alt="Marcos"
+                  />
+                </div>
+                <button
+                  class="bg-slate-100 dark:bg-slate-700/70 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-semibold px-5 py-2 rounded-xl text-sm border border-slate-200/80 dark:border-slate-600 transition-all active:scale-95"
+                >
+                  Edit profile
+                </button>
+              </div>
+
+              <div class="space-y-3">
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <h1
+                      class="font-extrabold text-2xl text-slate-900 dark:text-slate-100 tracking-tight"
+                    >
+                      Marcos
+                    </h1>
+                    <span
+                      class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-xl"
+                      style="font-variation-settings: 'FILL' 1"
+                      >verified</span
+                    >
+                  </div>
+                  <p class="text-sm font-medium text-blue-600 dark:text-blue-400">@marcosdev</p>
+                </div>
+
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Full-Stack Developer passionate about Angular, NestJS, and Tailwind CSS. Crafting
+                  clean, scalable, and well-designed web experiences. 🚀✨
+                </p>
+
+                <div
+                  class="flex flex-wrap gap-y-2 gap-x-5 text-xs text-slate-500 dark:text-slate-400 font-medium"
+                >
+                  <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-base">location_on</span>
+                    <span>Spain</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-base">calendar_month</span>
+                    <span>Joined March 2021</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-base">link</span>
+                    <a class="text-blue-600 dark:text-blue-400 hover:underline" href="#"
+                      >marcos.dev</a
+                    >
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span
+                    class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded-lg"
+                    >Frontend Engineer</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-lg"
+                    >Angular & Tailwind</span
+                  >
+                </div>
+
+                <div
+                  class="flex gap-6 pt-3 border-t border-slate-100 dark:border-slate-700/60 text-sm"
+                >
+                  <div class="flex items-center gap-1.5">
+                    <span class="font-bold text-slate-900 dark:text-slate-100">1.2k</span>
+                    <span class="text-slate-500 dark:text-slate-400 text-xs">Posts</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="font-bold text-slate-900 dark:text-slate-100">8.5k</span>
+                    <span class="text-slate-500 dark:text-slate-400 text-xs">Followers</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="font-bold text-slate-900 dark:text-slate-100">420</span>
+                    <span class="text-slate-500 dark:text-slate-400 text-xs">Following</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <nav
+              class="sticky top-16 z-30 flex border-t border-slate-100 dark:border-slate-700/60 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md text-sm font-semibold"
+            >
+              <button
+                class="flex-1 py-3.5 text-center text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400"
+              >
+                Posts
+              </button>
+              <button
+                class="flex-1 py-3.5 text-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors"
+              >
+                Replies
+              </button>
+              <button
+                class="flex-1 py-3.5 text-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors"
+              >
+                Media
+              </button>
+              <button
+                class="flex-1 py-3.5 text-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors"
+              >
+                Likes
+              </button>
+            </nav>
+          </section>
+
+          <div class="space-y-4">
+            <article
+              class="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200/80 dark:border-slate-700/50 transition-all hover:shadow-md"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img
+                    class="w-10 h-10 rounded-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbN5gnpFnD9FV_7tqAFgeSKAUTiAiDT9dEEcoUgTZ1QESGVmiQ2dIOHzgqOMLt9KrHjSxdk3HmJuZA5aRHaHZB6fDwfnQ-WOILHz7NsZ0Ob8yjT0zN6Q91K_48C4OZ5xdy9FM2gZQUazGU59bpKO0TqCvozONhj2McUTXOoO1oHt6wzHN4Fu4BoEzKR3yD8zAo9Gf1LOdF5Ye3JJZEX_20XwmpRhywOS41py4yPTztkXVpW4li36fKs1bxlgYqXG8JbJ_f0m9yix8"
+                    alt="Marcos"
+                  />
+                  <div>
+                    <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm leading-tight">
+                      Marcos
+                    </h3>
+                    <p class="text-xs text-slate-400">@marcosdev · 2h</p>
+                  </div>
+                </div>
+                <button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                  <span class="material-symbols-outlined">more_horiz</span>
+                </button>
+              </div>
+
+              <p class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed mb-3">
+                Testing component refactoring in Angular using signals and Tailwind CSS v4. The code
+                cleanliness and render performance are simply incredible. 🛠️⚡
+              </p>
+
+              <div class="flex gap-2 mb-4">
+                <span
+                  class="px-2.5 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded-lg"
+                  >#Angular</span
+                >
+                <span
+                  class="px-2.5 py-1 bg-blue-50 dark:bg-slate-700/50 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded-lg"
+                  >#TailwindCSS</span
+                >
+              </div>
+
+              <div
+                class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-700/60 text-slate-500 dark:text-slate-400 text-xs font-medium"
+              >
+                <button
+                  class="flex items-center gap-2 hover:text-red-500 transition-colors p-1.5 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg"
+                >
+                  <span class="material-symbols-outlined text-lg">favorite</span>
+                  <span>158</span>
+                </button>
+                <button
+                  class="flex items-center gap-2 hover:text-blue-500 transition-colors p-1.5 hover:bg-blue-50 dark:hover:bg-blue-950/30 rounded-lg"
+                >
+                  <span class="material-symbols-outlined text-lg">chat_bubble</span>
+                  <span>24</span>
+                </button>
+                <button
+                  class="flex items-center gap-2 hover:text-emerald-500 transition-colors p-1.5 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 rounded-lg"
+                >
+                  <span class="material-symbols-outlined text-lg">share</span>
+                  <span>Share</span>
+                </button>
+              </div>
+            </article>
+
+            <article
+              class="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200/80 dark:border-slate-700/50 transition-all hover:shadow-md"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img
+                    class="w-10 h-10 rounded-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbN5gnpFnD9FV_7tqAFgeSKAUTiAiDT9dEEcoUgTZ1QESGVmiQ2dIOHzgqOMLt9KrHjSxdk3HmJuZA5aRHaHZB6fDwfnQ-WOILHz7NsZ0Ob8yjT0zN6Q91K_48C4OZ5xdy9FM2gZQUazGU59bpKO0TqCvozONhj2McUTXOoO1oHt6wzHN4Fu4BoEzKR3yD8zAo9Gf1LOdF5Ye3JJZEX_20XwmpRhywOS41py4yPTztkXVpW4li36fKs1bxlgYqXG8JbJ_f0m9yix8"
+                    alt="Marcos"
+                  />
+                  <div>
+                    <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm leading-tight">
+                      Marcos
+                    </h3>
+                    <p class="text-xs text-slate-400">@marcosdev · 1d</p>
+                  </div>
+                </div>
+                <button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                  <span class="material-symbols-outlined">more_horiz</span>
+                </button>
+              </div>
+
+              <p class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed mb-3">
+                Good design isn't just about how it looks, but how it works. Visual consistency
+                across components saves time and creates intuitive user interfaces. 🧠📐
+              </p>
+
+              <div
+                class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-700/60 text-slate-500 dark:text-slate-400 text-xs font-medium"
+              >
+                <button
+                  class="flex items-center gap-2 hover:text-red-500 transition-colors p-1.5 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg"
+                >
+                  <span class="material-symbols-outlined text-lg">favorite</span>
+                  <span>82</span>
+                </button>
+                <button
+                  class="flex items-center gap-2 hover:text-blue-500 transition-colors p-1.5 hover:bg-blue-50 dark:hover:bg-blue-950/30 rounded-lg"
+                >
+                  <span class="material-symbols-outlined text-lg">chat_bubble</span>
+                  <span>8</span>
+                </button>
+                <button
+                  class="flex items-center gap-2 hover:text-emerald-500 transition-colors p-1.5 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 rounded-lg"
+                >
+                  <span class="material-symbols-outlined text-lg">share</span>
+                  <span>Share</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </main>
+
+        <aside
+          class="hidden lg:block lg:col-span-3 sticky top-16 h-[calc(100vh-4rem)] py-6 space-y-5"
+        >
+          <div class="relative flex items-center">
+            <span
+              class="material-symbols-outlined absolute left-3 text-slate-400 text-xl pointer-events-none select-none"
+              >search</span
+            >
+            <input
+              type="text"
+              placeholder="Search Opinionity"
+              class="w-full bg-white dark:bg-slate-800 text-sm text-slate-800 dark:text-slate-100 pl-10 pr-4 py-2.5 rounded-xl border border-slate-200/80 dark:border-slate-700/50 focus:outline-none focus:border-blue-500"
+            />
+          </div>
+
+          <div
+            class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-200/80 dark:border-slate-700/50 space-y-3"
+          >
+            <h2 class="font-bold text-slate-900 dark:text-slate-100 text-sm">What's happening</h2>
+            <div class="space-y-3">
+              <div
+                class="cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/40 p-2 rounded-lg transition-colors"
+              >
+                <p class="text-xs text-slate-400">Technology · Trending</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-slate-200 mt-0.5">
+                  #Angular2026
+                </p>
+                <p class="text-xs text-slate-400">14.2k posts</p>
+              </div>
+              <div
+                class="cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/40 p-2 rounded-lg transition-colors"
+              >
+                <p class="text-xs text-slate-400">UI Design · Trending</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-slate-200 mt-0.5">
+                  Tailwind CSS
+                </p>
+                <p class="text-xs text-slate-400">8.9k posts</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-200/80 dark:border-slate-700/50 space-y-3"
+          >
+            <h2 class="font-bold text-slate-900 dark:text-slate-100 text-sm">Who to follow</h2>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <div
+                    class="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs"
+                  >
+                    SUI
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                      Sarah UI
+                    </p>
+                    <p class="text-xs text-slate-400">@sarah_design</p>
+                  </div>
+                </div>
+                <button
+                  class="bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-lg transition-all"
+                >
+                  Follow
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <nav
+      class="fixed bottom-0 w-full lg:hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 z-50"
+    >
+      <div class="flex justify-around items-center h-14">
+        <a href="#" class="text-slate-500 dark:text-slate-400 hover:text-blue-600">
+          <span class="material-symbols-outlined">home</span>
+        </a>
+        <a href="#" class="text-slate-500 dark:text-slate-400 hover:text-blue-600">
+          <span class="material-symbols-outlined">search</span>
+        </a>
+        <a href="#" class="text-slate-500 dark:text-slate-400 hover:text-blue-600 relative">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+        </a>
+        <a href="#" class="text-blue-600 dark:text-blue-400">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1"
+            >person</span
+          >
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>
