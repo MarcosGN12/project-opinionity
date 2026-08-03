@@ -161,7 +161,9 @@
                       >verified</span
                     >
                   </div>
-                  <p class="text-sm font-medium text-blue-600 dark:text-blue-400">@marcosdev</p>
+                  <p class="text-sm font-medium text-blue-600 dark:text-blue-400">
+                    {{ user()?.displayName || user()?.username || 'Loading...' }}
+                  </p>
                 </div>
 
                 <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">

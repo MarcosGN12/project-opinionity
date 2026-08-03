@@ -11,7 +11,7 @@ export class PostsService {
     @InjectRepository(Post) private postRepository: Repository<Post>,
   ) {}
 
-  async create(createPostDto: CreatePostDto, userId: number): Promise<Post> {
+  async create(createPostDto: CreatePostDto, userId: string): Promise<Post> {
     const newPost = this.postRepository.create({
       ...createPostDto,
       user: { id: userId },

@@ -1,21 +1,31 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import {
+  LucideAngularModule,
+  LUCIDE_ICONS,
+  LucideIconProvider,
+  LogIn,
+  Eye,
+  EyeOff,
+} from 'lucide-angular';
 import { LoginData } from '../login';
-import { Router, ɵROUTER_PROVIDERS } from '@angular/router';
 
 @Component({
   selector: 'login-component-form',
   standalone: true,
-  imports: [LucideAngularModule, ReactiveFormsModule],
+  imports: [LucideAngularModule, ReactiveFormsModule, RouterLink],
+  providers: [
+    {
+      provide: LUCIDE_ICONS,
+      multi: true,
+      useValue: new LucideIconProvider({ LogIn, Eye, EyeOff }),
+    },
+  ],
   templateUrl: './login-component-form.html',
-  providers: [ɵROUTER_PROVIDERS],
 })
 export class LoginComponentForm {
-  router = inject(Router);
-
-  @Output()
-  login = new EventEmitter<LoginData>();
+  @Output() login = new EventEmitter<LoginData>();
 
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
@@ -26,11 +36,6 @@ export class LoginComponentForm {
 
   onLogin() {
     this.login.emit(this.loginForm.value);
-    this.router.navigateByUrl('/');
-  }
-
-  onLogOut() {
-    localStorage.removeItem('access_token');
   }
 
   togglePasswordVisibility(): void {

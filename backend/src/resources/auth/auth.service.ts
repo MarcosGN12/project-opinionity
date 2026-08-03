@@ -14,7 +14,7 @@ export class AuthService {
   async signIn(
     email: string,
     pass: string,
-  ): Promise<{ access_token: string; userId: number }> {
+  ): Promise<{ access_token: string; userId: string }> {
     const user = await this.usersService.findOneLoging(email);
 
     if (!user) {

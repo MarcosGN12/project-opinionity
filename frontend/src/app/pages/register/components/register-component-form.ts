@@ -1,15 +1,32 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router, ɵROUTER_PROVIDERS } from '@angular/router';
+import { Router } from '@angular/router';
+import {
+  LucideAngularModule,
+  LUCIDE_ICONS,
+  LucideIconProvider,
+  UserPlus,
+  Eye,
+  EyeOff,
+  ChevronDown,
+} from 'lucide-angular';
 import { RegisterData } from '../register';
 
 @Component({
   selector: 'register-component-form',
   standalone: true,
-  imports: [LucideAngularModule, ReactiveFormsModule],
+  imports: [
+    LucideAngularModule, // <-- Aquí va solo el módulo sin .pick()
+    ReactiveFormsModule,
+  ],
+  providers: [
+    {
+      provide: LUCIDE_ICONS,
+      multi: true,
+      useValue: new LucideIconProvider({ UserPlus, Eye, EyeOff, ChevronDown }),
+    },
+  ],
   templateUrl: './register-component-form.html',
-  providers: [ɵROUTER_PROVIDERS],
 })
 export class registerComponentForm {
   router = inject(Router);
@@ -30,6 +47,7 @@ export class registerComponentForm {
   showPassword: boolean = false;
 
   onregister() {
+    console.log('Datos que salen del formulario hijo:', this.registerForm.value);
     this.register.emit(this.registerForm.value);
   }
 
