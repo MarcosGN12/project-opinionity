@@ -22,15 +22,12 @@ export class Login {
   router = inject(Router);
   authService = inject(AuthService);
 
-  onLogin(data: any) {
+  onLogin(data: LoginData) {
     this.authService.login(data).subscribe({
       next: (response) => {
         if (response.access_token) {
-          localStorage.setItem('access_token', response.access_token);
-          localStorage.setItem('userId', response.userId);
-
           this.router.navigateByUrl('/');
-        } else {
+        } else if (response.message) {
           alert(response.message);
         }
       },

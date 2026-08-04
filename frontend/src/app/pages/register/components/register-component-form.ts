@@ -47,7 +47,6 @@ export class registerComponentForm {
   showPassword: boolean = false;
 
   onregister() {
-    console.log('Datos que salen del formulario hijo:', this.registerForm.value);
     this.register.emit(this.registerForm.value);
   }
 

@@ -1,21 +1,29 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'profile',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
 export class Profile implements OnInit {
-  private AuthService = inject(AuthService);
+  private authService = inject(AuthService);
 
-  user = this.AuthService.currentUser;
+  user = this.authService.currentUser;
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (!this.user()) {
-      this.AuthService.getProfile().subscribe();
+      this.authService.getProfile().subscribe({
+        error: (err) => {
+          console.error('Error al recuperar perfil:', err);
+          if (err.status === 401) {
+            this.authService.logout();
+          }
+        },
+      });
     }
   }
 }
